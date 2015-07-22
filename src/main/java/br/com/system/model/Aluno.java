@@ -32,7 +32,7 @@ public class Aluno implements Serializable{
 	private Endereco endereco;
 	private int telefone;
 	@ManyToOne
-	private Serie serie;
+	private Turma turma;
 
 	/**
 	 * @return the matricula
@@ -107,21 +107,23 @@ public class Aluno implements Serializable{
 		this.telefone = telefone;
 	}
 	/**
-	 * @return the serie
+	 * @return the turma
 	 */
-	public Serie getSerie() {
-		return serie;
+	public Turma getTurma() {
+		return turma;
 	}
 	/**
-	 * @param serie the serie to set
+	 * @param turma the turma to set
 	 */
-	public void setSerie(Serie serie) {
-		this.serie = serie;
+	public void setTurma(Turma turma) {
+		this.turma = turma;
 	}
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
 		return "Matricula: "+matricula+" | Nome: "+nomeCompleto+" | Data Nascimento: "+dataNascimento+" | Sexo: "+sexo;
 	}
+	
+	
 	
 }

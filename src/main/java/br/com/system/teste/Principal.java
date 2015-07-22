@@ -9,7 +9,7 @@ import br.com.system.model.Aluno;
 import br.com.system.model.Disciplina;
 import br.com.system.model.Endereco;
 import br.com.system.model.Professor;
-import br.com.system.model.Serie;
+import br.com.system.model.Turma;
 import br.com.system.service.AlunoService;
 import br.com.system.util.EstadosBrasileiros;
 import br.com.system.util.Sexo;
@@ -24,7 +24,7 @@ public class Principal {
 		AlunoService alunoService = new AlunoService();
 		//AlunoDao daoAluno = new AlunoDao();
 		
-		Serie s = new Serie();
+		Turma s = new Turma();
 		s.setDescricao("9º Ano");
 		
 		Endereco e = new Endereco();
@@ -40,7 +40,7 @@ public class Principal {
 		a.setNomeCompleto("Lucas Pereira de Lima");
 		a.setSexo(Sexo.Masculino);
 		a.setTelefone(88990077);
-		a.setSerie(s);
+		a.setTurma(s);
 		
 		Professor p = new Professor();
 		p.setCpf(60000000090L);
@@ -52,7 +52,7 @@ public class Principal {
 		
 		Disciplina d = new Disciplina();
 		d.setNome("História");
-		d.setSerie(s);
+		d.setTurma(s);
 		d.setProfessor(p);
 		
 		

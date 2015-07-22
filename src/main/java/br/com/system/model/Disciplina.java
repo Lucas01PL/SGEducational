@@ -19,7 +19,7 @@ public class Disciplina implements Serializable{
 	@ManyToOne
 	private Professor professor;
 	@ManyToOne
-	private Serie serie;
+	private Turma turma;
 
 	/**
 	 * @return the id
@@ -58,16 +58,16 @@ public class Disciplina implements Serializable{
 		this.professor = professor;
 	}
 	/**
-	 * @return the serie
+	 * @return the turma
 	 */
-	public Serie getSerie() {
-		return serie;
+	public Turma getTurma() {
+		return turma;
 	}
 	/**
-	 * @param serie the serie to set
+	 * @param turma the turma to set
 	 */
-	public void setSerie(Serie serie) {
-		this.serie = serie;
+	public void setTurma(Turma turma) {
+		this.turma = turma;
 	}
 	
 }

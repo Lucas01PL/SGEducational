@@ -3,13 +3,14 @@ package br.com.system.model;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Transient;
 
 @Entity
-public class Serie implements Serializable{
+public class Turma implements Serializable{
 
 	private static final long serialVersionUID = 3032168094264822615L;
 	@Id
@@ -20,6 +21,8 @@ public class Serie implements Serializable{
 	private List<Aluno> listaAlunos;
 	@Transient
 	private List<Disciplina> listaDisciplinas;
+	@Column(columnDefinition="check turno in ('M' or 'T')")
+	private String turno;
 
 	/**
 	 * @return the codigo
@@ -44,6 +47,18 @@ public class Serie implements Serializable{
 	 */
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+	/**
+	 * @return the turno
+	 */
+	public String getTurno() {
+		return turno;
+	}
+	/**
+	 * @param turno the turno to set
+	 */
+	public void setTurno(String turno) {
+		this.turno = turno;
 	}
 	/**
 	 * @return the listaAlunos
