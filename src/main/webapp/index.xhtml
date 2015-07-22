@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:p="http://primefaces.prime.com.tr/ui"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Home</title>
+<style type="text/css">
+#cabecalho {
+	border: 1px solid black;
+	height: 90px;
+}
+
+#menu {
+	border: 1px solid black;
+	margin-top: 5px;
+	height: 60px;
+}
+
+#conteudo {
+	border: 1px solid black;
+	margin-top: 5px;
+	margin-left: 10px;
+	margin-right: 30px;
+	height: 400px;
+	width: 80%;
+	float: right;
+}
+
+#barraLateral {
+	border: 1px solid black;
+	margin-top: 5px;
+	height: 400px;
+	width: 15%;
+	float: left;
+}
+
+#rodape {
+	border: 1px solid black;
+	margin-top: 415px;
+	height: 30px;
+}
+</style>
+</head>
+<body>
+	<script>
+		function ola()
+		{
+			window.alert("Bem Vindo ao SGEducational, \nSeu Sistema de Gestão Escolar!");	
+		}
+	</script>
+	<div id="cabecalho"></div>
+	<div id="menu"></div>
+	<div id="barraLateral"></div>
+	<div id="conteudo">
+		<h:commandButton onclick="ola();" value="Ola Mundo" />
+	</div>
+	<div id="rodape"></div>
+</body>
+</html>
