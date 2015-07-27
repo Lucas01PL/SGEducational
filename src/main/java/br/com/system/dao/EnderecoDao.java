@@ -6,7 +6,7 @@ import br.com.system.model.Endereco;
 
 public class EnderecoDao extends Dao<Endereco>{
 
-	public Endereco buscar(int id) {
+	public Endereco buscarId(int id) {
 		em.getTransaction().begin();
 		Endereco e = em.find(Endereco.class, id);
 		em.getTransaction().commit();

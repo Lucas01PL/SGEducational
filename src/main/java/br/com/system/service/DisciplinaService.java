@@ -17,7 +17,7 @@ public class DisciplinaService {
 	public Disciplina alterar(Disciplina d)
 	{
 		Disciplina c = new Disciplina();
-		c = daoDisciplina.buscar(d.getId());
+		c = daoDisciplina.buscarId(d.getId());
 		if(c != null)
 		{
 			return daoDisciplina.alterar(d);
@@ -31,7 +31,7 @@ public class DisciplinaService {
 	public boolean excluir(Disciplina d)
 	{
 		Disciplina c = new Disciplina();
-		c = daoDisciplina.buscar(d.getId());
+		c = daoDisciplina.buscarId(d.getId());
 		if(c != null)
 		{
 			return daoDisciplina.excluir(d);
@@ -42,11 +42,11 @@ public class DisciplinaService {
 		}
 	}
 	
-	public Disciplina buscar(Disciplina d)
+	public Disciplina buscarId(Disciplina d)
 	{
 		if(d.getId() < 0)
 		{
-			return daoDisciplina.buscar(d.getId());
+			return daoDisciplina.buscarId(d.getId());
 		}
 		else
 		{

@@ -62,5 +62,17 @@ public class EnderecoBean {
 			return "SucessoExclusaoEndereco";
 		}
 	}
+	
+	public String buscarId()
+	{
+		if(enderecoService.buscarId(endereco) == null)
+		{
+			return "Erro";
+		}
+		else
+		{
+			return "SucessoBuscaIdEndereco";
+		}
+	}
 
 }

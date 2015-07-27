@@ -17,7 +17,7 @@ public class ProfessorService {
 	public Professor alterar(Professor p)
 	{
 		Professor c = new Professor();
-		c = daoProfessor.buscar(c.getMatricula());
+		c = daoProfessor.buscarId(c.getMatricula());
 		if(c != null)
 		{
 			return daoProfessor.alterar(c);
@@ -31,7 +31,7 @@ public class ProfessorService {
 	public boolean excluir(Professor p)
 	{
 		Professor c = new Professor();
-		c = daoProfessor.buscar(p.getMatricula());
+		c = daoProfessor.buscarId(p.getMatricula());
 		if(c != null)
 		{
 			return daoProfessor.excluir(c);
@@ -42,11 +42,11 @@ public class ProfessorService {
 		}
 	}
 	
-	public Professor buscar(Professor p)
+	public Professor buscarId(Professor p)
 	{
 		if(p.getMatricula() < 0)
 		{
-			return daoProfessor.buscar(p.getMatricula());
+			return daoProfessor.buscarId(p.getMatricula());
 		}
 		else
 		{

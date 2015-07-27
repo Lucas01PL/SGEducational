@@ -62,5 +62,17 @@ public class ProfessorBean {
 			return "SucessoExclusaoProfessor";
 		}
 	}
+	
+	public String buscarId()
+	{
+		if(professorService.buscarId(professor) == null)
+		{
+			return "Erro";
+		}
+		else
+		{
+			return "SucessoBuscaIdProfessor";
+		}
+	}
 
 }

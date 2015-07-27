@@ -62,4 +62,16 @@ public class TurmaBean {
 			return "SucessoExclusaoTurma";
 		}
 	}
+	
+	public String buscarId()
+	{
+		if(turmaService.buscarId(turma) == null)
+		{
+			return "Erro";
+		}
+		else
+		{
+			return "SucessoBuscaIdTurma";
+		}
+	}
 }

@@ -7,7 +7,7 @@ import br.com.system.model.Aluno;
 public class AlunoDao extends Dao<Aluno>{
 
 	
-	public Aluno buscar(int id) {
+	public Aluno buscarId(int id) {
 		em.getTransaction().begin();
 		Aluno a = em.find(Aluno.class, id);
 		em.getTransaction().commit();

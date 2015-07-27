@@ -17,7 +17,7 @@ public class TurmaService {
 	public Turma alterar(Turma t)
 	{
 		Turma c = new Turma();
-		c = daoTurma.buscar(t.getId());
+		c = daoTurma.buscarId(t.getId());
 		if(c != null)
 		{
 			return daoTurma.alterar(t);
@@ -31,7 +31,7 @@ public class TurmaService {
 	public boolean excluir(Turma t)
 	{
 		Turma c = new Turma();
-		c = daoTurma.buscar(t.getId());
+		c = daoTurma.buscarId(t.getId());
 		if(c != null)
 		{
 			return daoTurma.excluir(t);
@@ -42,11 +42,11 @@ public class TurmaService {
 		}
 	}
 	
-	public Turma buscar(Turma t)
+	public Turma buscarId(Turma t)
 	{
 		if(t.getId() < 0)
 		{
-			return daoTurma.buscar(t.getId());
+			return daoTurma.buscarId(t.getId());
 		}
 		else
 		{

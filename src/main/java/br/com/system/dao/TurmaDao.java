@@ -6,7 +6,7 @@ import br.com.system.model.Turma;
 
 public class TurmaDao extends Dao<Turma>{
 
-	public Turma buscar(int id) {
+	public Turma buscarId(int id) {
 		em.getTransaction().begin();
 		Turma s = em.find(Turma.class, id);
 		em.getTransaction().commit();

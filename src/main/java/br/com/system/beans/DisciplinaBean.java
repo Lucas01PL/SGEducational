@@ -35,7 +35,7 @@ public class DisciplinaBean {
 		}
 		else
 		{
-			return "SucessoInclusao";
+			return "SucessoInclusaoDisciplina";
 		}
 	}
 	
@@ -47,7 +47,7 @@ public class DisciplinaBean {
 		}
 		else
 		{
-			return "SucessoAlteracao";
+			return "SucessoAlteracaoDisciplina";
 		}
 	}
 	
@@ -59,7 +59,19 @@ public class DisciplinaBean {
 		}
 		else
 		{
-			return "SucessoExclusao";
+			return "SucessoExclusaoDisciplina";
+		}
+	}
+	
+	public String buscarId()
+	{
+		if(disciplinaService.buscarId(disciplina) == null)
+		{
+			return "Erro";
+		}
+		else
+		{
+			return "SucessoBuscaIdDisciplina";
 		}
 	}
 

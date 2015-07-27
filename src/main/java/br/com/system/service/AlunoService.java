@@ -17,7 +17,7 @@ public class AlunoService {
 	public Aluno alterar(Aluno a)
 	{
 		Aluno c = new Aluno();
-		c = daoAluno.buscar(a.getMatricula());
+		c = daoAluno.buscarId(a.getMatricula());
 		if(c != null)
 		{
 			return daoAluno.alterar(a);
@@ -31,7 +31,7 @@ public class AlunoService {
 	public boolean excluir(Aluno a)
 	{
 		Aluno c = new Aluno();
-		c = daoAluno.buscar(a.getMatricula());
+		c = daoAluno.buscarId(a.getMatricula());
 		if(c != null)
 		{
 			return daoAluno.excluir(a);
@@ -42,11 +42,11 @@ public class AlunoService {
 		}
 	}
 	
-	public Aluno buscar(Aluno a)
+	public Aluno buscarId(Aluno a)
 	{
 		if(a.getMatricula() < 0)
 		{
-			return daoAluno.buscar(a.getMatricula());
+			return daoAluno.buscarId(a.getMatricula());
 		}
 		else
 		{

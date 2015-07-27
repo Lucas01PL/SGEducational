@@ -6,7 +6,7 @@ import br.com.system.model.Disciplina;
 
 public class DisciplinaDao extends Dao<Disciplina>{
 
-	public Disciplina buscar(int id) {
+	public Disciplina buscarId(int id) {
 		em.getTransaction().begin();
 		Disciplina s = em.find(Disciplina.class, id);
 		em.getTransaction().commit();

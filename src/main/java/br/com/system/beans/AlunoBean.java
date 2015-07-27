@@ -62,5 +62,16 @@ public class AlunoBean {
 			return "SucessoExclusaoAluno";
 		}
 	}
+	public String buscarId()
+	{
+		if(alunoService.buscarId(aluno) == null)
+		{
+			return "Erro";
+		}
+		else
+		{
+			return "SucessoBuscaIdAluno";
+		}
+	}
 
 }

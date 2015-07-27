@@ -17,7 +17,7 @@ public class EnderecoService {
 	public Endereco alterar(Endereco e)
 	{
 		Endereco c = new Endereco();
-		c = daoEndereco.buscar(e.getId());
+		c = daoEndereco.buscarId(e.getId());
 		if(c != null)
 		{
 			return daoEndereco.alterar(e);
@@ -31,7 +31,7 @@ public class EnderecoService {
 	public boolean excluir(Endereco e)
 	{
 		Endereco c = new Endereco();
-		c = daoEndereco.buscar(e.getId());
+		c = daoEndereco.buscarId(e.getId());
 		if(c != null)
 		{
 			return daoEndereco.excluir(e);
@@ -42,11 +42,11 @@ public class EnderecoService {
 		}
 	}
 	
-	public Endereco buscar(Endereco e)
+	public Endereco buscarId(Endereco e)
 	{
 		if(e.getId() < 0)
 		{
-			return daoEndereco.buscar(e.getId());
+			return daoEndereco.buscarId(e.getId());
 		}
 		else
 		{

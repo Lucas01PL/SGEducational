@@ -6,7 +6,7 @@ import br.com.system.model.Professor;
 
 public class ProfessorDao extends Dao<Professor>{
 
-	public Professor buscar(int id) {
+	public Professor buscarId(int id) {
 		em.getTransaction().begin();
 		Professor s = em.find(Professor.class, id);
 		em.getTransaction().commit();

@@ -31,7 +31,7 @@ public abstract class Dao<Entidade> {
 		return true;
 	}
 	
-	public abstract Entidade buscar(int id);
+	public abstract Entidade buscarId(int id);
 	
 	public abstract List<Entidade> listarTodos();
 	
