@@ -9,7 +9,7 @@ import br.com.system.service.EnderecoService;
 public class EnderecoBean {
 	
 	private EnderecoService enderecoService;
-	private Endereco endereco;
+	private Endereco endereco = new Endereco();
 	
 	public EnderecoService getEnderecoService() {
 		return enderecoService;

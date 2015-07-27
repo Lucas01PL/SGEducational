@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title></title>
+<h:outputStylesheet library="css" name="template.css" />
+</h:head>
+<h:body>
+<fieldset>
+<legend><h1>Cadastro de Aluno</h1></legend>
+	<h:form>
+		<h:panelGrid columns="4">
+			<h:outputLabel for="matricula">Matricula</h:outputLabel>
+			<h:inputText value="#{alunoBean.aluno.matricula}" id="matricula" size="5" readonly="true"/>
+			<h:outputLabel for="nome_completo">Nome Completo</h:outputLabel>
+			<h:inputText value="#{alunoBean.aluno.nomeCompleto}" id="nome_completo" size="50"/>
+			<h:outputLabel for="data_nascimento">Data Nascimento</h:outputLabel>
+			<h:inputText value="#{alunoBean.aluno.dataNascimento}" id="data_nascimento" size="10">
+				<f:convertDateTime pattern="dd/MM/yyyy"/>
+			</h:inputText>
+			<h:outputLabel>Sexo</h:outputLabel>
+			<h:selectOneRadio>
+				<f:selectItem itemLabel="Feminino" itemValue="F" />
+				<f:selectItem itemLabel="Masculino" itemValue="M" />
+			</h:selectOneRadio>
+		</h:panelGrid>
+		<h:panelGrid columns="2">
+			<h:outputLabel for="cep">CEP</h:outputLabel>
+			<h:inputText value="#{enderecoBean.endereco.cep}" id="cep" size="5"/>
+		</h:panelGrid>
+		<h:panelGrid columns="4">
+			<h:outputLabel for="logradouro">Logradouro</h:outputLabel>
+			<h:inputText value="#{enderecoBean.endereco.logradouro}" id="logradouro" size="50"/>
+			<h:outputLabel for="num_casa">Nº</h:outputLabel>
+			<h:inputText value="#{enderecoBean.endereco.numero}" id="num_casa" size="5"/>
+			<h:outputLabel for="telefone">Telefone</h:outputLabel>
+			<h:inputText value="#{alunoBean.aluno.telefone}" id="telefone" size="10"/>
+		</h:panelGrid>
+		<h:commandButton value="Salvar" action="#{alunoBean.salvar}" onclick="window.alert('Click');"/>
+	</h:form>
+</fieldset>
+</h:body>
+</html>

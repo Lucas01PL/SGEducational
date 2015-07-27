@@ -8,8 +8,8 @@ import br.com.system.service.ProfessorService;
 @ManagedBean
 public class ProfessorBean {
 	
-	private ProfessorService professorService;
-	private Professor professor;
+	private ProfessorService professorService = new ProfessorService();
+	private Professor professor = new Professor();
 	
 	public ProfessorService getProfessorService() {
 		return professorService;

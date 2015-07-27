@@ -6,7 +6,7 @@
 	<persistence-unit name="Sistema-Escolar">
 		<class>br.com.system.model.Aluno</class>
 		<class>br.com.system.model.Endereco</class>
-		<class>br.com.system.model.Serie</class>
+		<class>br.com.system.model.Turma</class>
 		<class>br.com.system.model.Professor</class>
 		<class>br.com.system.model.Disciplina</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>

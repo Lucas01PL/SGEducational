@@ -8,8 +8,8 @@ import br.com.system.service.AlunoService;
 @ManagedBean
 public class AlunoBean {
 	
-	private AlunoService alunoService;
-	private Aluno aluno;
+	private AlunoService alunoService = new AlunoService();
+	private Aluno aluno = new Aluno();
 	
 	public AlunoService getAlunoService() {
 		return alunoService;

@@ -9,7 +9,7 @@ import br.com.system.service.TurmaService;
 public class TurmaBean {
 
 	private TurmaService turmaService;
-	private Turma turma;
+	private Turma turma = new Turma();
 	
 	public TurmaService getTurmaService() {
 		return turmaService;

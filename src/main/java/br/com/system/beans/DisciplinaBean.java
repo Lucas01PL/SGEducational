@@ -8,8 +8,8 @@ import br.com.system.service.DisciplinaService;
 @ManagedBean
 public class DisciplinaBean {
 	
-	private DisciplinaService disciplinaService;
-	private Disciplina disciplina;
+	private DisciplinaService disciplinaService = new DisciplinaService();
+	private Disciplina disciplina = new Disciplina();
 	
 	public DisciplinaService getDisciplinaService() {
 		return disciplinaService;

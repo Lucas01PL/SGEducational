@@ -4,6 +4,10 @@ body
 	background-image: url("imagens/papel_parede_topo.jpg");
 }
 
+.ui-widget {  
+   font-size: 12px !important;  
+}
+
 #topo {
 	border: 1px solid black;
 	height: 50px;
