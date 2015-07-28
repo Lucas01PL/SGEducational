@@ -1,11 +1,13 @@
 package br.com.system.beans;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.view.ViewScoped;
 
 import br.com.system.model.Endereco;
 import br.com.system.service.EnderecoService;
 
 @ManagedBean
+@ViewScoped
 public class EnderecoBean {
 	
 	private EnderecoService enderecoService;
@@ -72,6 +74,27 @@ public class EnderecoBean {
 		else
 		{
 			return "SucessoBuscaIdEndereco";
+		}
+	}
+	
+	public boolean obterCep(int cep){
+		if(cep == 0)
+		{
+			endereco.setLogradouro("");
+			endereco.setNumero(0);
+			return true;
+		}
+		else if(cep == 1)
+		{
+			endereco.setLogradouro("Rua Chico Silvestre");
+			endereco.setNumero(50);
+			return true;
+		}
+		else
+		{
+			endereco.setLogradouro("Rua Dr. Fernando Hugo");
+			endereco.setNumero(249);
+			return true;
 		}
 	}
 
