@@ -20,6 +20,7 @@ public class Disciplina implements Serializable{
 	private Professor professor;
 	@ManyToOne
 	private Turma turma;
+	private Double valor;
 
 	/**
 	 * @return the id
@@ -68,6 +69,18 @@ public class Disciplina implements Serializable{
 	 */
 	public void setTurma(Turma turma) {
 		this.turma = turma;
+	}
+	/**
+	 * @return the valor
+	 */
+	public Double getValor() {
+		return valor;
+	}
+	/**
+	 * @param valor the valor to set
+	 */
+	public void setValor(Double valor) {
+		this.valor = valor;
 	}
 	
 }

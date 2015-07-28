@@ -29,24 +29,18 @@
 				<f:selectItem itemLabel="Masculino" itemValue="M" />
 			</h:selectOneRadio>
 		</h:panelGrid>
-		<h:panelGrid columns="3">
+		<h:panelGrid columns="2">
 			<h:outputLabel for="cep">CEP</h:outputLabel>
-			<h:inputText value="#{enderecoBean.endereco.cep}" id="cep" size="5">
-				<f:ajax render="group_endereco" event="change"/>
-			</h:inputText>
+			<h:inputText value="#{enderecoBean.endereco.cep}" id="cep" size="5"/>
 		</h:panelGrid>
 		<h:panelGrid columns="4">
-			<h:panelGroup id="group_endereco">
-				<h:panelGroup rendered="#{enderecoBean.obterCep(enderecoBean.endereco.cep)}">
-					<h:outputLabel for="logradouro">Logradouro</h:outputLabel>
-					<h:inputText value="#{enderecoBean.endereco.logradouro}" id="logradouro" size="50"/>
-					<h:outputLabel for="num_casa">Nº</h:outputLabel>
-					<h:inputText value="#{enderecoBean.endereco.numero}" id="num_casa" size="5"/>
-				</h:panelGroup>
-			</h:panelGroup>
-		</h:panelGrid>
+			<h:outputLabel for="logradouro">Logradouro</h:outputLabel>
+			<h:inputText value="#{enderecoBean.endereco.logradouro}" id="logradouro" size="50"/>
+			<h:outputLabel for="num_casa">Nº</h:outputLabel>
+			<h:inputText value="#{enderecoBean.endereco.numero}" id="num_casa" size="5"/>
 			<h:outputLabel for="telefone">Telefone</h:outputLabel>
 			<h:inputText value="#{alunoBean.aluno.telefone}" id="telefone" size="10"/>
+		</h:panelGrid>
 		<h:commandButton value="Salvar" action="#{alunoBean.salvar}" onclick="window.alert('Click');"/>
 	</h:form>
 </fieldset>
