@@ -29,7 +29,7 @@ public class EnderecoBean {
 		this.endereco = endereco;
 	}
 
-	public String salvar()
+	public String salvarEndereco()
 	{
 		if(enderecoService.salvar(endereco) == null)
 		{
@@ -41,7 +41,7 @@ public class EnderecoBean {
 		}
 	}
 	
-	public String alteracao()
+	public String alteracaoEndereco()
 	{
 		if(enderecoService.alterar(endereco) == null)
 		{
@@ -53,7 +53,7 @@ public class EnderecoBean {
 		}
 	}
 	
-	public String excluir()
+	public String excluirEndereco()
 	{
 		if(enderecoService.excluir(endereco) == false)
 		{
@@ -65,7 +65,7 @@ public class EnderecoBean {
 		}
 	}
 	
-	public String buscarId()
+	public String buscarEnderecoId()
 	{
 		if(enderecoService.buscarId(endereco) == null)
 		{

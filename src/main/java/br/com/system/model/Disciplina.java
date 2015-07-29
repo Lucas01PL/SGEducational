@@ -16,11 +16,6 @@ public class Disciplina implements Serializable{
 	@GeneratedValue
 	private int id;
 	private String nome;
-	@ManyToOne
-	private Professor professor;
-	@ManyToOne
-	private Turma turma;
-	private Double valor;
 
 	/**
 	 * @return the id
@@ -45,42 +40,6 @@ public class Disciplina implements Serializable{
 	 */
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-	/**
-	 * @return the professor
-	 */
-	public Professor getProfessor() {
-		return professor;
-	}
-	/**
-	 * @param professor the professor to set
-	 */
-	public void setProfessor(Professor professor) {
-		this.professor = professor;
-	}
-	/**
-	 * @return the turma
-	 */
-	public Turma getTurma() {
-		return turma;
-	}
-	/**
-	 * @param turma the turma to set
-	 */
-	public void setTurma(Turma turma) {
-		this.turma = turma;
-	}
-	/**
-	 * @return the valor
-	 */
-	public Double getValor() {
-		return valor;
-	}
-	/**
-	 * @param valor the valor to set
-	 */
-	public void setValor(Double valor) {
-		this.valor = valor;
 	}
 	
 }

@@ -27,7 +27,7 @@ public class ProfessorBean {
 		this.professor = professor;
 	}
 
-	public String salvar()
+	public String salvarProfessor()
 	{
 		if(professorService.salvar(professor) == null)
 		{
@@ -39,7 +39,7 @@ public class ProfessorBean {
 		}
 	}
 	
-	public String alteracao()
+	public String alterarProfessor()
 	{
 		if(professorService.alterar(professor) == null)
 		{
@@ -51,7 +51,7 @@ public class ProfessorBean {
 		}
 	}
 	
-	public String excluir()
+	public String excluirProfessor()
 	{
 		if(professorService.excluir(professor) == false)
 		{
@@ -63,7 +63,7 @@ public class ProfessorBean {
 		}
 	}
 	
-	public String buscarId()
+	public String buscarProfessorId()
 	{
 		if(professorService.buscarId(professor) == null)
 		{

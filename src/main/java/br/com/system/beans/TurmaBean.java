@@ -27,7 +27,7 @@ public class TurmaBean {
 		this.turma = turma;
 	}
 
-	public String salvar()
+	public String salvarTurma()
 	{
 		if(turmaService.salvar(turma) == null)
 		{
@@ -39,7 +39,7 @@ public class TurmaBean {
 		}
 	}
 	
-	public String alteracao()
+	public String alterarTurma()
 	{
 		if(turmaService.alterar(turma) == null)
 		{
@@ -51,7 +51,7 @@ public class TurmaBean {
 		}
 	}
 	
-	public String excluir()
+	public String excluirTurma()
 	{
 		if(turmaService.excluir(turma) == false)
 		{
@@ -63,7 +63,7 @@ public class TurmaBean {
 		}
 	}
 	
-	public String buscarId()
+	public String buscarTurmaId()
 	{
 		if(turmaService.buscarId(turma) == null)
 		{
