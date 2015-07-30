@@ -26,7 +26,7 @@ public class Turma implements Serializable{
 	@ManyToOne
 	private Disciplina disciplina;
 	@Transient
-	private List<Aluno> listaAlunos;
+	private List<TurmaAluno> listaAlunos;
 
 	/**
 	 * @return the codigo
@@ -91,13 +91,13 @@ public class Turma implements Serializable{
 	/**
 	 * @return the listaAlunos
 	 */
-	public List<Aluno> getListaAlunos() {
+	public List<TurmaAluno> getListaAlunos() {
 		return listaAlunos;
 	}
 	/**
 	 * @param listaAlunos the listaAlunos to set
 	 */
-	public void setListaAlunos(List<Aluno> listaAlunos) {
+	public void setListaAlunos(List<TurmaAluno> listaAlunos) {
 		this.listaAlunos = listaAlunos;
 	}
 	@Override

@@ -33,7 +33,7 @@ public class Aluno implements Serializable{
 	private Endereco endereco;
 	private int telefone;
 	@Transient
-	private List<Turma> listaTurmas;
+	private List<TurmaAluno> listaTurmas;
 
 	/**
 	 * @return the matricula
@@ -110,13 +110,13 @@ public class Aluno implements Serializable{
 	/**
 	 * @return the listaTurma
 	 */
-	public List<Turma> getListaTurmas() {
+	public List<TurmaAluno> getListaTurmas() {
 		return listaTurmas;
 	}
 	/**
 	 * @param turma the turma to set
 	 */
-	public void setListaTurma(List<Turma> listaTurmas) {
+	public void setListaTurma(List<TurmaAluno> listaTurmas) {
 		this.listaTurmas = listaTurmas;
 	}
 	@Override
