@@ -2,13 +2,14 @@ package br.com.system.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 @Entity
 public class Frequencia implements Serializable{
@@ -20,8 +21,6 @@ public class Frequencia implements Serializable{
 	private int id;
 	@Temporal(TemporalType.DATE)
 	private Date data;
-	@ManyToOne
-	private Disciplina disciplina;
 	
 	
 	/**
@@ -48,16 +47,5 @@ public class Frequencia implements Serializable{
 	public void setData(Date data) {
 		this.data = data;
 	}
-	/**
-	 * @return the materiaEscolar
-	 */
-	public Disciplina getDisciplina() {
-		return disciplina;
-	}
-	/**
-	 * @param materiaEscolar the materiaEscolar to set
-	 */
-	public void setDisciplina(Disciplina disciplina) {
-		this.disciplina = disciplina;
-	}
+	
 }

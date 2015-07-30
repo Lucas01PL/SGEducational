@@ -23,6 +23,8 @@ public class Turma implements Serializable{
 	private Double valor;
 	@ManyToOne
 	private Professor professor;
+	@ManyToOne
+	private Disciplina disciplina;
 	@Transient
 	private List<Aluno> listaAlunos;
 
