@@ -2,17 +2,16 @@ package br.com.system.model;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 
 import br.com.system.util.Sexo;
 
@@ -32,8 +31,8 @@ public class Aluno implements Serializable{
 	@OneToOne
 	private Endereco endereco;
 	private int telefone;
-	@Transient
-	private List<TurmaAluno> listaTurmas;
+	@ManyToOne
+	private Turma turma;
 
 	/**
 	 * @return the matricula
@@ -108,16 +107,16 @@ public class Aluno implements Serializable{
 		this.telefone = telefone;
 	}
 	/**
-	 * @return the listaTurma
+	 * @return the turma
 	 */
-	public List<TurmaAluno> getListaTurmas() {
-		return listaTurmas;
+	public Turma getTurma() {
+		return turma;
 	}
 	/**
 	 * @param turma the turma to set
 	 */
-	public void setListaTurma(List<TurmaAluno> listaTurmas) {
-		this.listaTurmas = listaTurmas;
+	public void setTurma(Turma turma) {
+		this.turma = turma;
 	}
 	@Override
 	public String toString() {
