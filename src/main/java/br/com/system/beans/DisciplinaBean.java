@@ -3,7 +3,6 @@ package br.com.system.beans;
 import javax.faces.bean.ManagedBean;
 
 import br.com.system.model.Disciplina;
-import br.com.system.model.Professor;
 import br.com.system.service.DisciplinaService;
 import br.com.system.service.ProfessorService;
 import br.com.system.service.TurmaService;

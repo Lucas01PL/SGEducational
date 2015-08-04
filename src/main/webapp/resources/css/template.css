@@ -1,7 +1,6 @@
 @CHARSET "ISO-8859-1";
 body
 {
-	background-image: url("imagens/papel_parede_topo.jpg");
 }
 
 .ui-widget {  
@@ -9,6 +8,7 @@ body
 }
 
 #topo {
+	background-image: url("imagens/papel_parede_topo.jpg");
 	border: 1px solid black;
 	height: 50px;
 	font-family: 'Lobster', cursive;

@@ -21,7 +21,6 @@ public class AutenticacaoPhaseListener  implements PhaseListener{
 	public void beforePhase(PhaseEvent event) {
 	}
 	
-	@SuppressWarnings("unused")
 	public void afterPhase(PhaseEvent event){
 		FacesContext context = event.getFacesContext();
 		String viewId = context.getViewRoot().getViewId();

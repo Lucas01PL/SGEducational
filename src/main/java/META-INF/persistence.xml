@@ -9,6 +9,9 @@
 		<class>br.com.system.model.Turma</class>
 		<class>br.com.system.model.Professor</class>
 		<class>br.com.system.model.Disciplina</class>
+		<class>br.com.system.model.ProfessorDisciplina</class>
+		<class>br.com.system.model.Frequencia</class>
+		<class>br.com.system.model.FrequenciaAlunoProfessorDisciplina</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/postgres" />

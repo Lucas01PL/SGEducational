@@ -2,6 +2,7 @@ package br.com.system.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +10,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -33,6 +35,8 @@ public class Professor implements Serializable{
 	@OneToOne
 	private Endereco endereco;
 	private int telefone;
+	@OneToMany
+	private List<ProfessorDisciplina> professorDisciplina;
 	
 	/**
 	 * @return the matricula
@@ -117,5 +121,18 @@ public class Professor implements Serializable{
 	 */
 	public void setTelefone(int telefone) {
 		this.telefone = telefone;
-	} 
+	}
+	/**
+	 * @return the professorDisciplina
+	 */
+	public List<ProfessorDisciplina> getProfessorDisciplina() {
+		return professorDisciplina;
+	}
+	/**
+	 * @param professorDisciplina the professorDisciplina to set
+	 */
+	public void setProfessorDisciplina(List<ProfessorDisciplina> professorDisciplina) {
+		this.professorDisciplina = professorDisciplina;
+	}
+
 }

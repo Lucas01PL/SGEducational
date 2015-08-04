@@ -1,4 +1,4 @@
-package br.com.system.model;
+ package br.com.system.model;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -123,7 +123,5 @@ public class Aluno implements Serializable{
 		// TODO Auto-generated method stub
 		return "Matricula: "+matricula+" | Nome: "+nomeCompleto+" | Data Nascimento: "+dataNascimento+" | Sexo: "+sexo;
 	}
-	
-	
 	
 }

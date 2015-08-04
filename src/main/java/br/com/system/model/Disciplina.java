@@ -1,11 +1,12 @@
 package br.com.system.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Disciplina implements Serializable{
@@ -16,6 +17,8 @@ public class Disciplina implements Serializable{
 	@GeneratedValue
 	private int id;
 	private String nome;
+	@OneToMany
+	private List<ProfessorDisciplina> professorDisciplina;
 
 	/**
 	 * @return the id
@@ -40,6 +43,18 @@ public class Disciplina implements Serializable{
 	 */
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	/**
+	 * @return the professorDisciplina
+	 */
+	public List<ProfessorDisciplina> getProfessorDisciplina() {
+		return professorDisciplina;
+	}
+	/**
+	 * @param professorDisciplina the professorDisciplina to set
+	 */
+	public void setProfessorDisciplina(List<ProfessorDisciplina> professorDisciplina) {
+		this.professorDisciplina = professorDisciplina;
 	}
 	
 }

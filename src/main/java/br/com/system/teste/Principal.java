@@ -52,8 +52,8 @@ public class Principal {
 		
 		Disciplina d = new Disciplina();
 		d.setNome("História");
-		d.setTurma(s);
-		d.setProfessor(p);
+		//d.set(s);
+		//d.setProfessor(p);
 		
 		
 		dao.salvar(s);

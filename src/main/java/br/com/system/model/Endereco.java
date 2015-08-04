@@ -20,12 +20,13 @@ public class Endereco implements Serializable{
 	@GeneratedValue
 	private int id;
 	private int cep;
-	private String logradouro;
-	private int numero;
 	@Column(name="uf")
 	@Enumerated(value = EnumType.STRING)
 	private EstadosBrasileiros estado;
-
+	private String cidade;
+	private String bairro;
+	private String logradouro;
+	private int numero;
 	/**
 	 * @return the id
 	 */
@@ -51,6 +52,42 @@ public class Endereco implements Serializable{
 		this.cep = cep;
 	}
 	/**
+	 * @return the estado
+	 */
+	public EstadosBrasileiros getEstado() {
+		return estado;
+	}
+	/**
+	 * @param estado the estado to set
+	 */
+	public void setEstado(EstadosBrasileiros estado) {
+		this.estado = estado;
+	}
+	/**
+	 * @return the cidade
+	 */
+	public String getCidade() {
+		return cidade;
+	}
+	/**
+	 * @param cidade the cidade to set
+	 */
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+	/**
+	 * @return the bairro
+	 */
+	public String getBairro() {
+		return bairro;
+	}
+	/**
+	 * @param bairro the bairro to set
+	 */
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+	/**
 	 * @return the logradouro
 	 */
 	public String getLogradouro() {
@@ -73,18 +110,6 @@ public class Endereco implements Serializable{
 	 */
 	public void setNumero(int numero) {
 		this.numero = numero;
-	}
-	/**
-	 * @return the estado
-	 */
-	public EstadosBrasileiros getEstado() {
-		return estado;
-	}
-	/**
-	 * @param estado the estado to set
-	 */
-	public void setEstado(EstadosBrasileiros estado) {
-		this.estado = estado;
 	}
 	@Override
 	public String toString() {

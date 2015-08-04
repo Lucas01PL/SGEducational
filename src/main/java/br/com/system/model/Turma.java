@@ -7,7 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
 @Entity
@@ -21,12 +21,10 @@ public class Turma implements Serializable{
 	@Column(columnDefinition="check turno in ('M','T','N')")
 	private String turno;
 	private Double valor;
-	@ManyToOne
-	private Professor professor;
-	@ManyToOne
-	private Disciplina disciplina;
+	@OneToMany
+	private List<ProfessorDisciplina> professorDisciplina;
 	@Transient
-	private List<TurmaAluno> listaAlunos;
+	private List<Aluno> listaAlunos;
 
 	/**
 	 * @return the codigo
@@ -77,29 +75,30 @@ public class Turma implements Serializable{
 		this.valor = valor;
 	}
 	/**
-	 * @return the professor
+	 * @return the professorDisciplina
 	 */
-	public Professor getProfessor() {
-		return professor;
+	public List<ProfessorDisciplina> getProfessorDisciplina() {
+		return professorDisciplina;
 	}
 	/**
-	 * @param professor the professor to set
+	 * @param professorDisciplina the professorDisciplina to set
 	 */
-	public void setProfessor(Professor professor) {
-		this.professor = professor;
+	public void setProfessorDisciplina(List<ProfessorDisciplina> professorDisciplina) {
+		this.professorDisciplina = professorDisciplina;
 	}
 	/**
 	 * @return the listaAlunos
 	 */
-	public List<TurmaAluno> getListaAlunos() {
+	public List<Aluno> getListaAlunos() {
 		return listaAlunos;
 	}
 	/**
 	 * @param listaAlunos the listaAlunos to set
 	 */
-	public void setListaAlunos(List<TurmaAluno> listaAlunos) {
+	public void setListaAlunos(List<Aluno> listaAlunos) {
 		this.listaAlunos = listaAlunos;
 	}
+
 	@Override
 	public String toString() {
 		//System.out.println("Código: "+codigo+" | Descrição"+descricao);
