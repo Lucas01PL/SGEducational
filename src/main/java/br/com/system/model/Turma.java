@@ -7,7 +7,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
 @Entity
@@ -21,7 +20,7 @@ public class Turma implements Serializable{
 	@Column(columnDefinition="check turno in ('M','T','N')")
 	private String turno;
 	private Double valor;
-	@OneToMany
+	@Transient
 	private List<ProfessorDisciplina> professorDisciplina;
 	@Transient
 	private List<Aluno> listaAlunos;

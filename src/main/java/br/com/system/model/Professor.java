@@ -10,10 +10,10 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 import br.com.system.util.Sexo;
 
@@ -35,7 +35,7 @@ public class Professor implements Serializable{
 	@OneToOne
 	private Endereco endereco;
 	private int telefone;
-	@OneToMany
+	@Transient
 	private List<ProfessorDisciplina> professorDisciplina;
 	
 	/**

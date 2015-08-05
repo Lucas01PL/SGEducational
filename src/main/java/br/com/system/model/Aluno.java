@@ -3,9 +3,11 @@
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -31,7 +33,7 @@ public class Aluno implements Serializable{
 	@OneToOne
 	private Endereco endereco;
 	private int telefone;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
 	private Turma turma;
 
 	/**

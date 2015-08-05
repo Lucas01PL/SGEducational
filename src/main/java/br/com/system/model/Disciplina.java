@@ -6,7 +6,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 
 @Entity
 public class Disciplina implements Serializable{
@@ -17,7 +17,7 @@ public class Disciplina implements Serializable{
 	@GeneratedValue
 	private int id;
 	private String nome;
-	@OneToMany
+	@Transient
 	private List<ProfessorDisciplina> professorDisciplina;
 
 	/**

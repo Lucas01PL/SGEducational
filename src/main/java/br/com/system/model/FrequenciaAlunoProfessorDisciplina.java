@@ -1,6 +1,8 @@
 package br.com.system.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -12,10 +14,10 @@ public class FrequenciaAlunoProfessorDisciplina {
 	@Id
 	@GeneratedValue
 	private int id;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
 	@JoinColumn(name = "id_professor_disciplina")
 	private ProfessorDisciplina professorDisciplina;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
 	@JoinColumn(name = "id_aluno")
 	private Aluno aluno;
 

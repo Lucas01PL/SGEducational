@@ -5,6 +5,7 @@ import javax.faces.view.ViewScoped;
 
 import br.com.system.model.Endereco;
 import br.com.system.service.EnderecoService;
+import br.com.system.util.EstadosBrasileiros;
 
 @ManagedBean
 @ViewScoped
@@ -77,17 +78,20 @@ public class EnderecoBean {
 		}
 	}
 	
-	public boolean obterCep(int cep){
-		if(cep == 0)
+	public boolean obterCep(Endereco endereco){
+		if(endereco.getCep() == 0)
 		{
 			endereco.setLogradouro("");
 			endereco.setNumero(0);
 			return true;
 		}
-		else if(cep == 1)
+		else if(endereco.getCep() == 1)
 		{
 			endereco.setLogradouro("Rua Chico Silvestre");
 			endereco.setNumero(50);
+			endereco.setBairro("Lagoa Redonda");
+			endereco.setCidade("Fortaleza");
+			endereco.setEstado(EstadosBrasileiros.CE);
 			return true;
 		}
 		else
