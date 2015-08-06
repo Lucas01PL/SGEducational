@@ -33,7 +33,7 @@ public class Aluno implements Serializable{
 	@OneToOne
 	private Endereco endereco;
 	private int telefone;
-	@ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
+	@ManyToOne
 	private Turma turma;
 
 	/**
