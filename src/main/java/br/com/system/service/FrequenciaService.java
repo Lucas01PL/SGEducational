@@ -44,7 +44,7 @@ public class FrequenciaService {
 	
 	public Frequencia buscarId(Frequencia f)
 	{
-		if(f.getId() < 0)
+		if(f.getId() > 0)
 		{
 			return daoFrequencia.buscarId(f.getId());
 		}

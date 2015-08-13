@@ -44,7 +44,7 @@ public class ProfessorDisciplinaService {
 	
 	public ProfessorDisciplina buscarId(ProfessorDisciplina pd)
 	{
-		if(pd.getId() < 0)
+		if(pd.getId() > 0)
 		{
 			return daoProfDisc.buscarId(pd.getId());
 		}

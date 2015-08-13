@@ -32,7 +32,7 @@
 						<f:selectItem itemLabel="Feminino" itemValue="F" />
 						<f:selectItem itemLabel="Masculino" itemValue="M" />
 					</h:selectOneMenu>
-					<h:outputLabel for="data_nascimento" style="margin-left: 37px;">Dt Nasc.</h:outputLabel>
+					<h:outputLabel for="data_nascimento" style="margin-left: 9px;">Dt Nasc.</h:outputLabel>
 					<h:inputText value="#{professorBean.professor.dataNascimento}" id="data_nascimento" size="6">
 						<f:convertDateTime pattern="dd/MM/yyyy"/>
 					</h:inputText>
@@ -72,17 +72,11 @@
 			<h:panelGrid columns="2">
 				<h:outputLabel for="telefone">Telefone</h:outputLabel>
 				<h:inputText value="#{professorBean.professor.telefone}" id="telefone" size="10" style="margin-left: 25px;"/>
-				<h:outputLabel for="turma">Turma</h:outputLabel>
-				<h:selectOneMenu value="#{alunoBean.aluno.turma}" style="margin-left: 25px;">
-						<f:selectItem itemLabel="Selecione" itemValue="" noSelectionOption="true" />
-						<f:selectItem itemLabel="A" itemValue="F" />
-						<f:selectItem itemLabel="B" itemValue="M" />
-				</h:selectOneMenu>
 			</h:panelGrid>
 			<br  />
 			<br  />
 			<h:panelGrid columns="3">
-				<h:commandButton value="Salvar" action="#{alunoBean.salvarAluno}" onclick="window.alert('Click');"/>
+				<h:commandButton value="Salvar" action="#{professorBean.salvarProfessor}" onclick="window.alert('Click');"/>
 				<h:commandButton value="Limpar" type="reset" onclick="window.alert('Reset');"/>
 				<h:commandButton value="Voltar" type="button" onclick="window.alert('Voltar');"/>
 			</h:panelGrid>

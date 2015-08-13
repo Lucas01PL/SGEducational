@@ -3,15 +3,15 @@
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -23,7 +23,8 @@ public class Aluno implements Serializable{
 	private static final long serialVersionUID = -3950808448024948332L;
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "SEQ_ALUNO")
+	@SequenceGenerator(name="SEQ_ALUNO", sequenceName="ALUNO_SEQUENCE")  
 	private int matricula;
 	private String nomeCompleto;
 	@Temporal(TemporalType.DATE)

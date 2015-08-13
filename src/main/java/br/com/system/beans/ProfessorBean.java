@@ -2,7 +2,6 @@ package br.com.system.beans;
 
 import javax.faces.bean.ManagedBean;
 
-import br.com.system.model.Aluno;
 import br.com.system.model.Endereco;
 import br.com.system.model.Professor;
 import br.com.system.service.EnderecoService;

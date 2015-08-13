@@ -44,7 +44,7 @@ public class EnderecoService {
 	
 	public Endereco buscarId(Endereco e)
 	{
-		if(e.getId() < 0)
+		if(e.getId() > 0)
 		{
 			return daoEndereco.buscarId(e.getId());
 		}

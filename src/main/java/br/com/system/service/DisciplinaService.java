@@ -44,7 +44,7 @@ public class DisciplinaService {
 	
 	public Disciplina buscarId(Disciplina d)
 	{
-		if(d.getId() < 0)
+		if(d.getId() > 0)
 		{
 			return daoDisciplina.buscarId(d.getId());
 		}

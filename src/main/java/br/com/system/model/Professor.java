@@ -9,8 +9,10 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
@@ -23,7 +25,8 @@ public class Professor implements Serializable{
 	private static final long serialVersionUID = -616887011126034328L;
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "SEQ_PROFESSOR")
+	@SequenceGenerator(name="SEQ_PROFESSOR", sequenceName="PROFESSOR_SEQUENCE")
 	private int matricula;
 	private String nomeCompleto;
 	@Temporal(TemporalType.DATE)

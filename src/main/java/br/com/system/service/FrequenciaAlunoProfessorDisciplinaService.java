@@ -44,7 +44,7 @@ public class FrequenciaAlunoProfessorDisciplinaService {
 	
 	public FrequenciaAlunoProfessorDisciplina buscarId(FrequenciaAlunoProfessorDisciplina fapd)
 	{
-		if(fapd.getId() < 0)
+		if(fapd.getId() > 0)
 		{
 			return daoFreqAlunoProfTurma.buscarId(fapd.getId());
 		}

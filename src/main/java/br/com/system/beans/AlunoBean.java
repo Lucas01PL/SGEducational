@@ -4,16 +4,20 @@ import javax.faces.bean.ManagedBean;
 
 import br.com.system.model.Aluno;
 import br.com.system.model.Endereco;
+import br.com.system.model.Turma;
 import br.com.system.service.AlunoService;
 import br.com.system.service.EnderecoService;
+import br.com.system.service.TurmaService;
 
 @ManagedBean
 public class AlunoBean {
 	
 	private AlunoService alunoService = new AlunoService();
 	private EnderecoService enderecoService = new EnderecoService();
+	private TurmaService turmaService = new TurmaService();
 	private Aluno aluno = new Aluno();
 	private Endereco endereco = new Endereco();
+	private int idTurma;
 	
 	public AlunoService getAlunoService() {
 		return alunoService;
@@ -21,6 +25,14 @@ public class AlunoBean {
 
 	public void setAlunoService(AlunoService alunoService) {
 		this.alunoService = alunoService;
+	}
+
+	public TurmaService getTurmaService() {
+		return turmaService;
+	}
+
+	public void setTurmaService(TurmaService turmaService) {
+		this.turmaService = turmaService;
 	}
 
 	public Aluno getAluno() {
@@ -46,10 +58,22 @@ public class AlunoBean {
 	public void setEnderecoService(EnderecoService enderecoService) {
 		this.enderecoService = enderecoService;
 	}
+	
+	public int getIdTurma() {
+		return idTurma;
+	}
+
+	public void setIdTurma(int idTurma) {
+		this.idTurma = idTurma;
+	}
 
 	public String salvarAluno()
 	{
+		Turma t = new Turma();
+		t.setId(idTurma);
+		t = turmaService.buscarId(t);
 		aluno.setEndereco(endereco);
+		aluno.setTurma(t);
 		enderecoService.salvar(endereco);
 		if(alunoService.salvar(aluno) == null)
 		{

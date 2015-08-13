@@ -3,25 +3,30 @@ package br.com.system.model;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 import javax.persistence.Transient;
 
 @Entity
+@Table(name="Turma")
 public class Turma implements Serializable{
 
 	private static final long serialVersionUID = 3032168094264822615L;
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "SEQ_TURMA")
+	@SequenceGenerator(name="SEQ_TURMA", sequenceName="TURMA_SEQUENCE")  
 	private int id;
 	private String descricao;
-	@Column(columnDefinition="check turno in ('M','T','N')")
 	private String turno;
 	private Double valor;
 	@OneToMany
+	@JoinTable(name="TurmaProfessorDisciplina")
 	private List<ProfessorDisciplina> professorDisciplina;
 	@Transient
 	private List<Aluno> listaAlunos;

@@ -44,7 +44,7 @@ public class ProfessorService {
 	
 	public Professor buscarId(Professor p)
 	{
-		if(p.getMatricula() < 0)
+		if(p.getMatricula() > 0)
 		{
 			return daoProfessor.buscarId(p.getMatricula());
 		}

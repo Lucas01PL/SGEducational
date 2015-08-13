@@ -44,7 +44,7 @@ public class TurmaService {
 	
 	public Turma buscarId(Turma t)
 	{
-		if(t.getId() < 0)
+		if(t.getId() > 0)
 		{
 			return daoTurma.buscarId(t.getId());
 		}

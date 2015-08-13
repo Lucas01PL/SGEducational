@@ -44,7 +44,7 @@ public class AlunoService {
 	
 	public Aluno buscarId(Aluno a)
 	{
-		if(a.getMatricula() < 0)
+		if(a.getMatricula() > 0)
 		{
 			return daoAluno.buscarId(a.getMatricula());
 		}

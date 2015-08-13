@@ -7,7 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
 import br.com.system.util.EstadosBrasileiros;
 
@@ -17,7 +19,8 @@ public class Endereco implements Serializable{
 	private static final long serialVersionUID = -5999797637353386139L;
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "SEQ_ENDERECO")
+	@SequenceGenerator(name="SEQ_ENDERECO", sequenceName="ENDERECO_SEQUENCE") 
 	private int id;
 	private int cep;
 	@Column(name="uf")

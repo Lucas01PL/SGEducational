@@ -4,15 +4,18 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class FrequenciaAlunoProfessorDisciplina {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "SEQ_FRE_ALU_PRO_DIS")
+	@SequenceGenerator(name="SEQ_FRE_ALU_PRO_DIS", sequenceName="FRE_ALU_PRO_DIS_SEQUENCE")
 	private int id;
 	@ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
 	@JoinColumn(name = "id_professor_disciplina")
