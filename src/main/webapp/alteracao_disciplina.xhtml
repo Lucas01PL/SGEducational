@@ -11,33 +11,24 @@
 <h:outputStylesheet library="css" name="template.css" />
 </h:head>
 <h:body>
-	<h2>Cadastro de Turma</h2>
+	<h2>Cadastro de Disciplina</h2>
 		<hr />
 		<br  />
 	<h:form>
 		<h:panelGrid columns="2">	
 			<h:outputLabel for="id">Código </h:outputLabel>
-			<h:inputText value="#{turmaBean.turma.id}" id="id" size="5" readonly="true" style="margin-left: 20px;"/>
+			<h:inputText value="#{disciplinaBean.disciplina.id}" id="id" size="5" readonly="true" style="margin-left: 20px;"/>
 			<h:inputHidden />
 			<h:inputHidden />
 			<h:outputLabel for="descricao">Descrição</h:outputLabel>
-			<h:inputText value="#{turmaBean.turma.descricao}" id="descricao" size="20" style="margin-left: 20px;"/>
+			<h:inputText value="#{disciplinaBean.disciplina.nome}" id="descricao" size="20" style="margin-left: 20px;"/>
 			<h:inputHidden />
 			<h:inputHidden />
-			<h:outputLabel>Turno</h:outputLabel>
-			<h:selectOneMenu style="margin-left: 20px;" value="#{turmaBean.turma.turno}">
-				<f:selectItem itemLabel="Selecione" itemValue="" noSelectionOption="true" />
-				<f:selectItem itemLabel="Manhã" itemValue="M" />
-				<f:selectItem itemLabel="Tarde" itemValue="T" />
-				<f:selectItem itemLabel="Noite" itemValue="N" />
-			</h:selectOneMenu>
-			<h:outputLabel for="valor" >Valor</h:outputLabel>
-			<h:inputText value="#{turmaBean.turma.valor}" id="valor" size="5" style="margin-left: 20px;"/>
 		</h:panelGrid>
 			<br  />
 			<br  />
 		<h:panelGrid columns="3">
-			<h:commandButton value="Salvar" action="#{turmaBean.alterarTurma}" onclick="window.alert('Click');"/>
+			<h:commandButton value="Salvar" action="#{disciplinaBean.alterarDisciplina}" onclick="window.alert('Click');"/>
 			<h:commandButton value="Limpar" type="reset" onclick="window.alert('Reset');"/>
 			<h:commandButton value="Voltar" type="button" onclick="window.alert('Voltar');"/>
 		</h:panelGrid>

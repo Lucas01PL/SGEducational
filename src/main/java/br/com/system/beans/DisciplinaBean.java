@@ -1,5 +1,7 @@
 package br.com.system.beans;
 
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 
 import br.com.system.model.Disciplina;
@@ -14,6 +16,8 @@ public class DisciplinaBean {
 	private ProfessorService professorService = new ProfessorService();
 	private TurmaService turmaService = new TurmaService();
 	private Disciplina disciplina = new Disciplina();
+	private List<Disciplina> disciplinas;
+		
 	
 	public DisciplinaService getDisciplinaService() {
 		return disciplinaService;
@@ -29,6 +33,15 @@ public class DisciplinaBean {
 
 	public void setDisciplina(Disciplina disciplina) {
 		this.disciplina = disciplina;
+	}
+	
+	public List<Disciplina> getDisciplinas() {
+		disciplinas = disciplinaService.listarTodos();
+		return disciplinas;
+	}
+
+	public void setDisciplinas(List<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
 	}
 
 	public String salvarDisciplina()

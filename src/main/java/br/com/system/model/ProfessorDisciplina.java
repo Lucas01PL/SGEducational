@@ -14,8 +14,8 @@ import javax.persistence.SequenceGenerator;
 public class ProfessorDisciplina {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO, generator = "SEQ_FREQ_DISC")
-	@SequenceGenerator(name="SEQ_FREQ_DISC", sequenceName="FREQ_DISC_SEQUENCE")
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "SEQ_PROF_DISC")
+	@SequenceGenerator(name="SEQ_PROF_DISC", sequenceName="PROF_DISC_SEQUENCE")
 	private int id;
 	@ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
 	@JoinColumn(name = "id_disciplina")

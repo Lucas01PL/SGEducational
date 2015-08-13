@@ -15,7 +15,7 @@ public class DisciplinaDao extends Dao<Disciplina>{
 	
 	public List<Disciplina> listarTodos(){
 		em.getTransaction().begin();
-		List<Disciplina> lista = (List<Disciplina>) em.createQuery("SELECT D FROM Disciplia D", Disciplina.class).getResultList();
+		List<Disciplina> lista = (List<Disciplina>) em.createQuery("SELECT D FROM Disciplina D", Disciplina.class).getResultList();
 		em.getTransaction().commit();
 		return lista;
 	}

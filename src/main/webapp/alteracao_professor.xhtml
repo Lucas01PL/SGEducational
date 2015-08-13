@@ -27,7 +27,7 @@
 			<h:outputLabel >Sexo</h:outputLabel>
 			<h:panelGroup>
 				<h:panelGrid columns="5">
-					<h:selectOneMenu style="margin-left: 17px;" value="professorBean.professor.sexo">
+					<h:selectOneMenu style="margin-left: 17px;" value="#{professorBean.professor.sexo}">
 						<f:selectItem itemLabel="Selecione" itemValue="" noSelectionOption="true" />
 						<f:selectItem itemLabel="Feminino" itemValue="F" />
 						<f:selectItem itemLabel="Masculino" itemValue="M" />
@@ -76,7 +76,7 @@
 			<br  />
 			<br  />
 			<h:panelGrid columns="3">
-				<h:commandButton value="Salvar" action="#{professorBean.salvarProfessor}" onclick="window.alert('Click');"/>
+				<h:commandButton value="Salvar" action="#{professorBean.alterarProfessor}" onclick="window.alert('Click');"/>
 				<h:commandButton value="Limpar" type="reset" onclick="window.alert('Reset');"/>
 				<h:commandButton value="Voltar" type="button" onclick="window.alert('Voltar');"/>
 			</h:panelGrid>

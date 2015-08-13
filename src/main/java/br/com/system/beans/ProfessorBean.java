@@ -1,5 +1,7 @@
 package br.com.system.beans;
 
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 
 import br.com.system.model.Endereco;
@@ -14,6 +16,7 @@ public class ProfessorBean {
 	private Professor professor = new Professor();
 	private EnderecoService enderecoService = new EnderecoService();
 	private Endereco endereco = new Endereco();
+	private List<Professor> professores;
 	
 	public ProfessorService getProfessorService() {
 		return professorService;
@@ -45,6 +48,15 @@ public class ProfessorBean {
 
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
+	}
+
+	public List<Professor> getProfessores() {
+		professores = professorService.listarTodos();
+		return professores;
+	}
+
+	public void setProfessores(List<Professor> professores) {
+		this.professores = professores;
 	}
 
 	public String salvarProfessor()
