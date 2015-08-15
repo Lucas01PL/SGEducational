@@ -1,19 +1,20 @@
 package br.com.system.beans;
 
-import java.util.List;
-
 import javax.faces.bean.ManagedBean;
 
 import br.com.system.model.Disciplina;
+import br.com.system.model.Professor;
 import br.com.system.model.ProfessorDisciplina;
+import br.com.system.service.DisciplinaService;
 import br.com.system.service.ProfessorDisciplinaService;
+import br.com.system.service.ProfessorService;
 
 @ManagedBean
 public class ProfessorDisciplinaBean {
 	
 	private ProfessorDisciplinaService profDiscService = new ProfessorDisciplinaService();
 	private ProfessorDisciplina profDisc = new ProfessorDisciplina();
-	private List<Disciplina> disciplinas;
+	private int[] disciplinas;
 	private int idProfessor;
 	
 	public ProfessorDisciplinaService getProfDiscService() {
@@ -32,14 +33,14 @@ public class ProfessorDisciplinaBean {
 		this.profDisc = profDisc;
 	}
 	
-	public List<Disciplina> getDisciplinas() {
+	public int[] getDisciplinas() {
 		return disciplinas;
 	}
 
-	public void setDisciplinas(List<Disciplina> disciplinas) {
+	public void setDisciplinas(int[] disciplinas) {
 		this.disciplinas = disciplinas;
 	}
-	
+
 	public int getIdProfessor() {
 		return idProfessor;
 	}
@@ -50,14 +51,26 @@ public class ProfessorDisciplinaBean {
 
 	public String salvarProfDisc()
 	{
-		if(profDiscService.salvar(profDisc) == null)
-		{
-			return "Erro";
+		String msg = "SucessoInclusaoProfDisc";
+		DisciplinaService discService = new DisciplinaService();
+		ProfessorService profService = new ProfessorService();
+		Professor p = new Professor();
+		p.setMatricula(idProfessor);
+		p = profService.buscarId(p);
+		for (int i = 0; i < disciplinas.length; i++) {
+			profDisc.setProfessor(p);
+			Disciplina d = new Disciplina();
+			d.setId(disciplinas[i]);
+			Disciplina c = new Disciplina();
+			c = discService.buscarId(d);
+			profDisc.setDisciplina(c);
+			if(profDiscService.salvar(profDisc) == null)
+			{
+				msg = "Erro";
+			}
+			profDisc = new ProfessorDisciplina();
 		}
-		else
-		{
-			return "SucessoInclusaoProfDisc";
-		}
+		return msg;
 	}
 	
 	public String alterarProfDisc()

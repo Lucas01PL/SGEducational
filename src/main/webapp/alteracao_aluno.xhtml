@@ -73,10 +73,10 @@
 				<h:outputLabel for="telefone">Telefone</h:outputLabel>
 				<h:inputText value="#{alunoBean.aluno.telefone}" id="telefone" size="10" style="margin-left: 25px;"/>
 				<h:outputLabel for="turma">Turma</h:outputLabel>
-				<h:selectOneMenu value="#{alunoBean.aluno.turma}" style="margin-left: 25px;">
+				<h:selectOneMenu value="#{alunoBean.turma}" style="margin-left: 25px;" id="turma">
 						<f:selectItem itemLabel="Selecione" itemValue="" noSelectionOption="true" />
-						<f:selectItem itemLabel="A" itemValue="F" />
-						<f:selectItem itemLabel="B" itemValue="M" />
+						<f:converter converterId="turmaConverter" />
+						<f:selectItems value="#{turmaBean.turmas}" var="t" itemValue="#{t}" itemLabel="#{t.toString()}" />
 				</h:selectOneMenu>
 			</h:panelGrid>
 			<br  />

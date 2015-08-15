@@ -103,10 +103,40 @@ public class Turma implements Serializable{
 	public void setListaAlunos(List<Aluno> listaAlunos) {
 		this.listaAlunos = listaAlunos;
 	}
-
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + id;
+		return result;
+	}
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Turma other = (Turma) obj;
+		if (descricao.trim().equalsIgnoreCase(other.descricao) && turno.trim().equalsIgnoreCase(other.turno))
+			return true;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+	
 	@Override
 	public String toString() {
 		//System.out.println("Código: "+codigo+" | Descrição"+descricao);
-		return "Código: "+id+" | Descrição: "+descricao;
+		return descricao+" - "+turno;
 	}
 }

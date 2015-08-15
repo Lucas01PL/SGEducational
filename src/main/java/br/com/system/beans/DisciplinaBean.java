@@ -3,6 +3,7 @@ package br.com.system.beans;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 
 import br.com.system.model.Disciplina;
 import br.com.system.service.DisciplinaService;
@@ -10,6 +11,7 @@ import br.com.system.service.ProfessorService;
 import br.com.system.service.TurmaService;
 
 @ManagedBean
+@ViewScoped
 public class DisciplinaBean {
 	
 	private DisciplinaService disciplinaService = new DisciplinaService();
