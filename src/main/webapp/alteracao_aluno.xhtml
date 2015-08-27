@@ -1,91 +1,86 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:h="http://java.sun.com/jsf/html"
 	  xmlns:f="http://java.sun.com/jsf/core"
 	  xmlns:ui="http://java.sun.com/jsf/facelets"
-	  xmlns:p="http://primefaces.org/ui">
-<h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title></title>
-<h:outputStylesheet library="css" name="template.css" />
-</h:head>
-<h:body>
-	<h2>Cadastro de Aluno</h2>
-		<hr />
-		<br  />
-	<h:form>
-		<h:panelGrid columns="4">	
-			<h:outputLabel for="matricula">Matricula </h:outputLabel>
-			<h:inputText value="#{alunoBean.aluno.matricula}" id="matricula" size="5" readonly="true" style="margin-left: 20px;"/>
-			<h:inputHidden />
-			<h:inputHidden />
-			<h:outputLabel for="nome_completo">Nome</h:outputLabel>
-			<h:inputText value="#{alunoBean.aluno.nomeCompleto}" id="nome_completo" size="50" style="margin-left: 20px;"/>
-			<h:inputHidden />
-			<h:inputHidden />
-			<h:outputLabel >Sexo</h:outputLabel>
-			<h:panelGroup>
-				<h:panelGrid columns="5">
-					<h:selectOneMenu style="margin-left: 17px;">
-						<f:selectItem itemLabel="Selecione" itemValue="" noSelectionOption="true" />
-						<f:selectItem itemLabel="Feminino" itemValue="F" />
-						<f:selectItem itemLabel="Masculino" itemValue="M" />
-					</h:selectOneMenu>
+	  xmlns:p="http://primefaces.org/ui"
+	  template="/template.xhtml">
+	  	<ui:define name="pageTitle">Alteração de Aluno</ui:define>
+		<ui:define name="conteudo">	
+			<h2>Alteração de Aluno</h2>
+			<hr />
+			<br  />
+			<h:form>
+				<h:panelGrid columns="4">	
+					<h:outputLabel for="matricula">Matricula </h:outputLabel>
+					<h:inputText value="#{alunoBean.aluno.matricula}" id="matricula" size="5" readonly="true" style="margin-left: 20px;"/>
 					<h:inputHidden />
 					<h:inputHidden />
-						<h:outputLabel for="data_nascimento" style="margin-left: 37px;">Dt Nasc.</h:outputLabel>
-						<h:inputText value="#{alunoBean.aluno.dataNascimento}" id="data_nascimento" size="6">
-							<f:convertDateTime pattern="dd/MM/yyyy"/>
-						</h:inputText>
+					<h:outputLabel for="nome_completo">Nome</h:outputLabel>
+					<h:inputText value="#{alunoBean.aluno.nomeCompleto}" id="nome_completo" size="50" style="margin-left: 20px;"/>
+					<h:inputHidden />
+					<h:inputHidden />
+					<h:outputLabel >Sexo</h:outputLabel>
+					<h:panelGroup>
+						<h:panelGrid columns="5">
+							<h:selectOneMenu style="margin-left: 17px;">
+								<f:selectItem itemLabel="Selecione" itemValue="" noSelectionOption="true" />
+								<f:selectItem itemLabel="Feminino" itemValue="F" />
+								<f:selectItem itemLabel="Masculino" itemValue="M" />
+							</h:selectOneMenu>
+							<h:inputHidden />
+							<h:inputHidden />
+								<h:outputLabel for="data_nascimento" style="margin-left: 37px;">Dt Nasc.</h:outputLabel>
+								<h:inputText value="#{alunoBean.aluno.dataNascimento}" id="data_nascimento" size="6">
+									<f:convertDateTime pattern="dd/MM/yyyy"/>
+								</h:inputText>
+						</h:panelGrid>
+					</h:panelGroup>
 				</h:panelGrid>
-			</h:panelGroup>
-		</h:panelGrid>
-		<h:panelGrid columns="2">
-			<h:outputLabel for="cep">CEP</h:outputLabel>
-			<h:inputText value="#{alunoBean.endereco.cep}" id="cep" size="5" style="margin-left: 52px;">
-				<f:ajax render="group_endereco" event="change"/>
-			</h:inputText>
-		</h:panelGrid>
-			<h:panelGroup id="group_endereco">
-				<h:panelGroup rendered="#{enderecoBean.obterCep(alunoBean.endereco)}">
-					<h:panelGrid columns="4">
-						<h:outputLabel for="logradouro">Logradouro</h:outputLabel>
-						<h:inputText value="#{alunoBean.endereco.logradouro}" id="logradouro" size="35" style="margin-left: 6px;"/>
-						<h:outputLabel for="num_casa" style="margin-left: 15px;">N�</h:outputLabel>
-						<h:inputText value="#{alunoBean.endereco.numero}" id="num_casa" size="4"/>
-					</h:panelGrid>
-					<h:panelGrid columns="6">
-						<h:outputLabel for="cidade">Cidade</h:outputLabel>
-						<h:inputText value="#{alunoBean.endereco.cidade}" id="cidade" size="9" style="margin-left: 36px;"/>
-						<h:outputLabel for="bairro" style="margin-left: 10px;">Bairro</h:outputLabel>
-						<h:inputText value="#{alunoBean.endereco.bairro}" id="bairro" size="10"/>
-						<h:outputLabel for="cidade" style="margin-left: 4px;">UF</h:outputLabel>
-						<h:selectOneMenu style="margin-left: 3px;" value="#{alunoBean.endereco.estado}">
-							<f:selectItem itemLabel="Selecione" itemValue="" noSelectionOption="true" />
-							<f:selectItem itemLabel="Cear�" itemValue="CE" />
-							<f:selectItem itemLabel="Maranh�o" itemValue="MA" />
-					</h:selectOneMenu>
-					</h:panelGrid>
+				<h:panelGrid columns="2">
+					<h:outputLabel for="cep">CEP</h:outputLabel>
+					<h:inputText value="#{alunoBean.endereco.cep}" id="cep" size="5" style="margin-left: 52px;">
+						<f:ajax render="group_endereco" event="change"/>
+					</h:inputText>
+				</h:panelGrid>
+				<h:panelGroup id="group_endereco">
+					<h:panelGroup rendered="#{enderecoBean.obterCep(alunoBean.endereco)}">
+						<h:panelGrid columns="4">
+							<h:outputLabel for="logradouro">Logradouro</h:outputLabel>
+							<h:inputText value="#{alunoBean.endereco.logradouro}" id="logradouro" size="35" style="margin-left: 6px;"/>
+							<h:outputLabel for="num_casa" style="margin-left: 15px;">Nº</h:outputLabel>
+							<h:inputText value="#{alunoBean.endereco.numero}" id="num_casa" size="4"/>
+						</h:panelGrid>
+						<h:panelGrid columns="6">
+							<h:outputLabel for="cidade">Cidade</h:outputLabel>
+							<h:inputText value="#{alunoBean.endereco.cidade}" id="cidade" size="9" style="margin-left: 36px;"/>
+							<h:outputLabel for="bairro" style="margin-left: 10px;">Bairro</h:outputLabel>
+							<h:inputText value="#{alunoBean.endereco.bairro}" id="bairro" size="10"/>
+							<h:outputLabel for="cidade" style="margin-left: 4px;">UF</h:outputLabel>
+							<h:selectOneMenu style="margin-left: 3px;" value="#{alunoBean.endereco.estado}">
+								<f:selectItem itemLabel="Selecione" itemValue="" noSelectionOption="true" />
+								<f:selectItem itemLabel="Ceará" itemValue="CE" />
+								<f:selectItem itemLabel="Maranhão" itemValue="MA" />
+						</h:selectOneMenu>
+						</h:panelGrid>
+					</h:panelGroup>
 				</h:panelGroup>
-			</h:panelGroup>
-			<h:panelGrid columns="2">
-				<h:outputLabel for="telefone">Telefone</h:outputLabel>
-				<h:inputText value="#{alunoBean.aluno.telefone}" id="telefone" size="10" style="margin-left: 25px;"/>
-				<h:outputLabel for="turma">Turma</h:outputLabel>
-				<h:selectOneMenu value="#{alunoBean.turma}" style="margin-left: 25px;" id="turma">
-						<f:selectItem itemLabel="Selecione" itemValue="" noSelectionOption="true" />
-						<f:converter converterId="turmaConverter" />
-						<f:selectItems value="#{turmaBean.turmas}" var="t" itemValue="#{t}" itemLabel="#{t.toString()}" />
-				</h:selectOneMenu>
-			</h:panelGrid>
-			<br  />
-			<br  />
-			<h:panelGrid columns="3">
-				<h:commandButton value="Salvar" action="#{alunoBean.alterarAluno}" onclick="window.alert('Click');"/>
-				<h:commandButton value="Limpar" type="reset" onclick="window.alert('Reset');"/>
-				<h:commandButton value="Voltar" type="button" onclick="window.alert('Voltar');"/>
-			</h:panelGrid>
-	</h:form>
-</h:body>
-</html>
+				<h:panelGrid columns="2">
+					<h:outputLabel for="telefone">Telefone</h:outputLabel>
+					<h:inputText value="#{alunoBean.aluno.telefone}" id="telefone" size="10" style="margin-left: 25px;"/>
+					<h:outputLabel for="turma">Turma</h:outputLabel>
+					<h:selectOneMenu value="#{alunoBean.turma}" style="margin-left: 25px;" id="turma">
+							<f:selectItem itemLabel="Selecione" itemValue="" noSelectionOption="true" />
+							<f:converter converterId="turmaConverter" />
+							<f:selectItems value="#{turmaBean.turmas}" var="t" itemValue="#{t}" itemLabel="#{t.toString()}" />
+					</h:selectOneMenu>
+				</h:panelGrid>
+				<br  />
+				<br  />
+				<h:panelGrid columns="3">
+					<h:commandButton value="Salvar" action="#{alunoBean.alterarAluno}" onclick="window.alert('Click');"/>
+					<h:commandButton value="Limpar" type="reset" onclick="window.alert('Reset');"/>
+					<h:commandButton value="Voltar" type="button" onclick="window.alert('Voltar');"/>
+				</h:panelGrid>
+			</h:form>
+		</ui:define>
+	</ui:composition>

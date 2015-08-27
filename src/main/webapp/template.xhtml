@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>
+		<ui:insert name="pageTitle">SGEducational - Inicio</ui:insert>
+	</title>
+	<style>
+	body
+	{
+		background-image: url("resources/imagens/papel_parede_topo.jpg")
+	}
+	</style>
+</h:head>
+<h:body>
+	<div id="div_logo" >
+		<ui:include src="topo.xhtml" />
+	</div>
+	<div id="conteudo" style="opacity:0.9; padding-top: 20px; padding-left: 20px; width: 82%; height: 470px">
+		<ui:insert name="conteudo" />
+	</div>
+	<div id="div_rodape">
+		<ui:include src="rodape.xhtml" />
+	</div>
+</h:body>
+</html>

@@ -1,0 +1,189 @@
+@CHARSET "ISO-8859-1";
+#topo {
+		background-color:#960B0B;
+		height: 60px;
+		font-family: 'Lobster', cursive;
+		font-size: 15px;
+		opacity:0.9;
+		padding-bottom: 25px;
+		margin-top: -15px;
+	}
+	#topo2 {
+		background-color: #F3A0A0;
+	    height: 0px;
+	    font-family: 'Lobster', cursive;
+	    font-size: 15px;
+	    opacity: 0.9;
+	    padding-bottom: 25px;
+	    border-radius: 4px;
+	}
+	
+		#menu {
+		background: #6FA8DC -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.8)), to(rgba(255,255,255,0)));
+	    height: 15px;
+	    width: 83%;
+	    font-family: 'Lobster', cursive;
+	    font-size: 15px;
+	    opacity: 1;
+	    padding-bottom: 25px;
+	    margin-top: -50px;
+	    margin-left: 9%;
+	    border-radius: 10px;
+	    padding-top: 10px;
+	    position: relative;
+	}
+	
+	#menuAluno {
+		background-color: #6FA8DC;
+	    height: 13px;
+	    width: 70px;
+	    font-family: 'Lobster', cursive;
+	    font-size: 15px;
+	    opacity: 1.0;
+	    padding-bottom: 25px;
+	    margin-top: -9px;
+	    margin-left: 410px;
+	    position: absolute;
+	    border-radius: 35px;
+	    padding-top: 10px;
+	    float: left;
+	    border: 0;
+	}
+	#menuProfessor {
+		background-color: #6FA8DC;
+	    height: 13px;
+	    width: 97px;
+	    font-family: 'Lobster', cursive;
+	    font-size: 15px;
+	    opacity: 1.0;
+	    padding-bottom: 25px;
+	    margin-top: -9px;
+	    margin-left: 535px;
+	    position: absolute;
+	    border-radius: 35px;
+	    padding-top: 10px;
+	    float: left;
+	    border: 0;
+	}
+	
+	#menuTurma {
+		background-color: #6FA8DC;
+	    height: 13px;
+	    width: 84px;
+	    font-family: 'Lobster', cursive;
+	    font-size: 15px;
+	    opacity: 1.0;
+	    padding-bottom: 25px;
+	    margin-top: -9px;
+	    margin-left: 685px;
+	    position: absolute;
+	    border-radius: 35px;
+	    padding-top: 10px;
+	    float: left;
+	    border: 0;
+	}
+	
+	#menuFinanceiro {
+		background-color: #6FA8DC;
+	    height: 13px;
+	    width: 102px;
+	    font-family: 'Lobster', cursive;
+	    font-size: 15px;
+	    opacity: 1.0;
+	    padding-bottom: 25px;
+	    margin-top: -9px;
+	    margin-left: 820px;
+	    position: absolute;
+	    border-radius: 35px;
+	    padding-top: 10px;
+	    float: left;
+	    border: 0;
+	}
+	
+	#menuConfiguracao {
+		background-color: #6FA8DC;
+	    height: 13px;
+	    width: 122px;
+	    font-family: 'Lobster', cursive;
+	    font-size: 15px;
+	    opacity: 1.0;
+	    padding-bottom: 25px;
+	    margin-top: -9px;
+	    margin-left: 970px;
+	    position: absolute;
+	    border-radius: 35px;
+	    padding-top: 10px;
+	    float: left;
+	    border: 0;
+	}
+	
+	#iconeAluno {
+		font-family: 'Lobster', cursive;
+		background-repeat: no-repeat;
+		background-position: 20px 10px;
+		width: 50px;
+		height: 50px;
+		float: left;
+		margin-top: -7px;
+		margin-left: 367px;
+		position: absolute;
+	}
+	
+	#iconeProfessor {
+		font-family: 'Lobster', cursive;
+		background-repeat: no-repeat;
+		background-position: 20px 10px;
+		width: 50px;
+		height: 50px;
+		float: left;
+		margin-top: -7px;
+		margin-left: 490px;
+		position: absolute;
+	}
+	
+	#iconeTurma {
+		font-family: 'Lobster', cursive;
+		background-repeat: no-repeat;
+		background-position: 20px 10px;
+		width: 50px;
+		height: 50px;
+		float: left;
+		margin-top: -7px;
+		margin-left: 640px;
+		position: absolute;
+	}
+	
+	#iconeFinanceiro {
+		font-family: 'Lobster', cursive;
+		background-repeat: no-repeat;
+		background-position: 20px 10px;
+		width: 50px;
+		height: 50px;
+		float: left;
+		margin-top: -7px;
+		margin-left: 775px;
+		position: absolute;
+	}
+	
+	#iconeConfiguracao {
+		font-family: 'Lobster', cursive;
+		background-repeat: no-repeat;
+		background-position: 20px 10px;
+		width: 50px;
+		height: 50px;
+		float: left;
+		margin-top: -7px;
+		margin-left: 928px;
+		position: absolute;
+	}
+	
+	#conteudo
+	{
+		background-color: #6FA8DC;
+		height: 600px;
+	    width: 84%;
+		opacity: 0.7;
+		margin-left: 115px;
+		border-radius: 10px;
+		margin-top: 2px;	
+	}
